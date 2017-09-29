@@ -1,2 +1,11 @@
-# AnimationToggle
-A made a small toggle for css animations that require two classes. it's made so all animations can be done by one function.
+# AnimationToggle.js
+
+An small and simple class toggle in Vanilla Javascript.
+
+### how to use
+
+- add id: [number]_trigger to the element you want to trigger the class toggle.
+`<button id="1_trigger">click me!</button>`
+
+- add class: animatable_[number] to the element you want to be toggled.
+`<div class="animatable_1"></div>`
