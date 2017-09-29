@@ -1,4 +1,4 @@
-# AnimationToggle.js
+# ClassToggle.js
 
 An small and simple class toggle in Vanilla Javascript.
 
@@ -15,4 +15,4 @@ An small and simple class toggle in Vanilla Javascript.
 - done!
 
 ### Example
-[example.html](example.html)
+[Codepen Example](https://codepen.io/motion_max/pen/ZXyRLW)

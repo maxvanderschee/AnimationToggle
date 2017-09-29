@@ -1,3 +1,6 @@
+/*! ClassToggle.js - v1.0 - 2017-09-29
+* https://github.com/mvdschee/ClassToggle.js
+* Copyright (c) 2017 Max van der Schee; Licensed MIT */
 window.onload = () => {
     let trigger = new Trigger();
     trigger.findTrigger();
