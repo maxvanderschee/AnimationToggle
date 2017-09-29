@@ -1,54 +1,38 @@
-//A small class toggle in javascript for animations in css.
-//Made by Max van der Schee
-
-//------ VARIABLES ------
-
-//Here should go the names of the ID's of any element you want to be the input.
-var triggers = ["Hamburger", "Black-filter"];
-
-//Here should go alle the names of the ID's that you would like to be animated, make sure you cluster them.
-//Example: animations for an hamburger menu are the first 3 ID's, after that are 3 others for an other animation etc..
-var animatable = ["Hamburger", "Navigation", "Black-filter", "Black-filter-1", "Black-filter-2", "Black-filter-3", "Black-filter-4"];
-
-//The classes that will be added and removed.
-var openClass = "open";
-var closedClass = "closed";
-
-var isOpen = true;
-
-
-//------ TRIGGERS ------
-
-//Here you should tell which trigger should activate which function.
-document.getElementById(triggers[0]).addEventListener('click', triggerMenu, false);
-document.getElementById(triggers[1]).addEventListener('click', triggerAll, false);
-
-//Here you define which cluster you want to animate by which trigger.
-//First number is were it should start and second number is were it should end.
-function triggerMenu() {
-  animation(0, 2);
-}
-function triggerAll() {
-  animation(3, 6);
-}
-
-
-//----- TOGGLE FUNCTION -------
-
-//here happens the magic. you shouldn't change anything here.
-function animation(start, end) {
-  if (isOpen) {
-    for (i = start; i < animatable.length; i++) {
-      document.getElementById(animatable[i]).classList.add(openClass);
-      document.getElementById(animatable[i]).classList.remove(closedClass);
-      if (i === end) { break; }
+window.onload = function () {
+    var trigger = new Trigger();
+    trigger.findTrigger();
+};
+var Trigger = (function () {
+    function Trigger() {
     }
-  } else {
-    for (i = start; i < animatable.length; i++) {
-      document.getElementById(animatable[i]).classList.add(closedClass);
-      document.getElementById(animatable[i]).classList.remove(openClass);
-      if (i === end) { break; }
+    Trigger.prototype.findTrigger = function () {
+        var toggle = new Toggle();
+        this.list = document.querySelectorAll("[id$='_trigger']");
+        var _loop_1 = function (i) {
+            this_1.number = parseInt(this_1.list[i].id);
+            var animatable = "animatable_" + this_1.number;
+            document.getElementById(this_1.list[i].id).addEventListener('click', function () { toggle.toggleAnimatable(animatable); }, false);
+        };
+        var this_1 = this;
+        for (var i = 0; i < this.list.length; i++) {
+            _loop_1(i);
+        }
+    };
+    return Trigger;
+}());
+var Toggle = (function () {
+    function Toggle() {
     }
-  }
-  isOpen = !isOpen;
-}
+    Toggle.prototype.toggleAnimatable = function (animatable) {
+        this.loopList = document.querySelectorAll("." + animatable);
+        for (var i = 0; i < this.loopList.length; i++) {
+            if (this.loopList[i].classList.contains("show")) {
+                document.getElementsByClassName(animatable)[i].classList.remove("show");
+            }
+            else {
+                document.getElementsByClassName(animatable)[i].classList.add("show");
+            }
+        }
+    };
+    return Toggle;
+}());
