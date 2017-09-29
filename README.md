@@ -9,3 +9,10 @@ An small and simple class toggle in Vanilla Javascript.
 
 - add class: animatable_[number] to the element you want to be toggled.
 `<div class="animatable_1"></div>`
+
+- Match-up the [numbers] from the trigger with that of your animatable class.
+
+- done!
+
+### Example
+[example.html](example.html)
