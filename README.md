@@ -1,10 +1,10 @@
 # ClassToggle.js
 
-An light ~0.5kb and simple class toggle in in pure JS with no dependencies.
+A light ~0.5kb and simple class toggle in in pure JS with no dependencies.
 
 **ClassToggle.js**
 - Toggle classes with pure JavaScript.
-- is a light-weight library, just **516 bytes** minified & gzipped.
+- Is a light-weight library, just **516 bytes** minified & gzipped.
 - No dependencies.
 
 ClassToggle.js is written with the aim to be as light and reusable as possible.
@@ -26,9 +26,9 @@ In HTML, add an identifier to the element that should be a trigger:
 ```html
 <button id="1_trigger">click me!</button>
 ```
-the number represent the group that should be toggled.
+The number represent the group that should be toggled.
 
-for the elements that will receive the "active" class, add an identifier like:
+For the elements that will receive the "active" class, add an identifier like:
 
 ```html
 <div class="execute_1"></div>
