@@ -1,6 +1,6 @@
 # ClassToggle.js
 
-A light ~0.5kb and simple class toggle in in pure JS with no dependencies.
+A light ~0.5kb and simple class toggle in pure JS with no dependencies.
 
 **ClassToggle.js**
 - Toggle classes with pure JavaScript.
