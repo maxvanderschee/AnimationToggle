@@ -1,4 +1,4 @@
-/*! ClassToggle.js - v0.0.3 - 2017-09-29
+/*! ClassToggle.js - v0.0.3 - 2017-09-30
 * https://github.com/mvdschee/ClassToggle.js
 * Copyright (c) 2017 Max van der Schee; Licensed MIT */
 window.onload = () => {
