@@ -1,10 +1,6 @@
-/*! ClassToggle.js - v0.0.3 - 2017-09-30
+/*! ClassToggle.js - v0.0.4 - 2017-10-02
 * https://github.com/mvdschee/ClassToggle.js
 * Copyright (c) 2017 Max van der Schee; Licensed MIT */
-window.onload = () => {
-    let trigger = new Trigger();
-    trigger.findTrigger();
-}
 
 class Trigger {
   list: any;
@@ -12,13 +8,12 @@ class Trigger {
   number: number;
   execute: string;
 
-
   findTrigger(){
     let toggle = new Toggle();
-    this.list = document.querySelectorAll("[id$='_trigger']");
+    this.list = document.querySelectorAll("[id^='trigger_']");
 
     for (let i = 0; i < this.list.length; i++) {
-      this.number = parseInt(this.list[i].id);
+      this.number = this.list[i].id.slice(8);
       let execute = "execute_" + this.number
       document.getElementById(this.list[i].id).addEventListener('click', () => {toggle.toggleExecute(execute)}, false);
     }

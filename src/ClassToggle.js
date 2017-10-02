@@ -1,18 +1,14 @@
-/*! ClassToggle.js - v0.0.3 - 2017-09-30
+/*! ClassToggle.js - v0.0.4 - 2017-10-02
 * https://github.com/mvdschee/ClassToggle.js
 * Copyright (c) 2017 Max van der Schee; Licensed MIT */
-window.onload = function () {
-    var trigger = new Trigger();
-    trigger.findTrigger();
-};
 var Trigger = (function () {
     function Trigger() {
     }
     Trigger.prototype.findTrigger = function () {
         var toggle = new Toggle();
-        this.list = document.querySelectorAll("[id$='_trigger']");
+        this.list = document.querySelectorAll("[id^='trigger_']");
         var _loop_1 = function (i) {
-            this_1.number = parseInt(this_1.list[i].id);
+            this_1.number = this_1.list[i].id.slice(8);
             var execute = "execute_" + this_1.number;
             document.getElementById(this_1.list[i].id).addEventListener('click', function () { toggle.toggleExecute(execute); }, false);
         };

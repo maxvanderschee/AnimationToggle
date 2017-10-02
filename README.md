@@ -24,7 +24,7 @@ Download the minified library: [ClassToggle.min.js.](https://github.com/mvdschee
 In HTML, add an identifier to the element that should be a trigger:
 
 ```html
-<button id="1_trigger">click me!</button>
+<button id="trigger_1">click me!</button>
 ```
 The number represent the group that should be toggled.
 
@@ -35,6 +35,13 @@ For the elements that will receive the "active" class, add an identifier like:
 ```
 
 Match-up the **[numbers]** from the **trigger** with that of your **execute** class.
+
+All you need to do now is just instantiate ClassToggle as follows:
+
+```js
+var trigger = new Trigger();
+trigger.findTrigger();
+```
 
 ### Example
 [Demo on Codepen.](https://codepen.io/motion_max/pen/ZXyRLW)
