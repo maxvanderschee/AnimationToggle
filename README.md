@@ -4,7 +4,7 @@ A light ~0.5kb and simple class toggle in pure JS with no dependencies.
 
 **ClassToggle.js**
 - Toggle classes with pure JavaScript.
-- Is a light-weight library, just **516 bytes** minified & gzipped.
+- Is a light-weight library, just **466 bytes** minified & gzipped.
 - No dependencies.
 
 ClassToggle.js is written with the aim to be as light and reusable as possible.
