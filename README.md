@@ -13,7 +13,7 @@ For a robust code base ClassToggle.js is written in Typescript and compiled to J
 
 ### Install
 
-Download the minified library: [ClassToggle.min.js.](https://github.com/mvdschee/ClassToggle.js/tree/master/src/ClassToggle.min.js)
+Download the minified library: [ClassToggle.min.js.](https://raw.githubusercontent.com/mvdschee/ClassToggle.js/master/src/ClassToggle.min.js)
 
 ```html
 <script type="text/javascript" src="assets/js/ClassToggle.min.js"></script>

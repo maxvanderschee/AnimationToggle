@@ -27,9 +27,11 @@ var Toggle = (function () {
         for (var i = 0; i < this.loopList.length; i++) {
             if (this.loopList[i].classList.contains("active")) {
                 document.getElementsByClassName(execute)[i].classList.remove("active");
+                document.getElementsByClassName(execute)[i].classList.add("deactive");
             }
             else {
                 document.getElementsByClassName(execute)[i].classList.add("active");
+                document.getElementsByClassName(execute)[i].classList.remove("deactive");
             }
         }
     };
