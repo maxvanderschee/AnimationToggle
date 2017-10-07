@@ -24,7 +24,7 @@ Download the minified library: [ClassToggle.min.js.](https://raw.githubuserconte
 In HTML, add an identifier to the element that should be a trigger:
 
 ```html
-<button id="trigger_1">click me!</button>
+<button class="trigger_1">click me!</button>
 ```
 The number represent the group that should be toggled.
 

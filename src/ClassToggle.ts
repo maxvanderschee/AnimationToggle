@@ -1,27 +1,31 @@
-/*! ClassToggle.js - v0.0.4 - 2017-10-02
+/*! ClassToggle.js - v0.0.5 - 2017-10-07
 * https://github.com/mvdschee/ClassToggle.js
 * Copyright (c) 2017 Max van der Schee; Licensed MIT */
 
 class Trigger {
-  list: any;
+  list: NodeListOf<Element>;
   id: string;
   number: number;
   execute: string;
 
   findTrigger(){
     let toggle = new Toggle();
-    this.list = document.querySelectorAll("[id^='trigger_']");
+    this.list = document.querySelectorAll("[class^='trigger_']");
 
     for (let i = 0; i < this.list.length; i++) {
-      this.number = this.list[i].id.slice(8);
-      let execute = "execute_" + this.number
-      document.getElementById(this.list[i].id).addEventListener('click', () => {toggle.toggleExecute(execute)}, false);
+      this.number = parseInt(this.list[i].classList[0].slice(8));
+      let execute = "execute_" + this.number;
+
+      let executeList: HTMLCollectionOf<Element> = document.getElementsByClassName(this.list[i].classList[0]);
+      for(let j = 0; j < executeList.length; j++) {
+        executeList[j].addEventListener('click', () => {toggle.toggleExecute(execute)}, false);
+      }
     }
   }
 }
 
 class Toggle {
-  loopList: any;
+  loopList: NodeListOf<Element>;
 
   toggleExecute(execute: string) {
     this.loopList = document.querySelectorAll("." + execute);
