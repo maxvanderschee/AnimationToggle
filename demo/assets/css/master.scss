@@ -1,0 +1,179 @@
+// base
+html {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+section {
+	height: 50vh;
+	padding: 3rem 0;
+	min-height: 15rem;
+}
+
+h1,h2 {
+	color: white;
+	text-align: center;
+}
+
+h1 {
+	margin: 0 0 4rem;
+}
+
+p {
+	color: white;
+	font-size: 0.8rem;
+	text-align: center;
+}
+.one {
+	background: #5555e6;
+}
+.two {
+	background: #6bd799;
+}
+.three {
+	background: #ce8098;
+}
+.four {
+	background: #6e6fcc;
+}
+
+div {
+	display: block;
+	width: 23rem;
+	margin: 0 auto;
+}
+	
+[data-tr] {
+	display: inline-block;
+	background: #c1493c;
+	color: white;
+	padding: 20px 40px;
+	margin: 20px;
+	user-select: none;
+	border-radius: 10px;
+	box-shadow: 2px 1px 10px 2px rgba(0, 0, 0, 0.2);
+	cursor: pointer;
+	transition: 0.1s ease;
+
+	&:hover {
+		transform: translateY(1px);
+	}
+
+	&:active {
+		transform: translateY(3px);
+	}
+}
+	
+[data-ex] {
+	display: inline-block;
+	background: white;
+	padding: 20px 40px;
+	margin: 20px;
+	user-select: none;
+	position: relative;
+	
+	&:before {
+		content: 'Class: ';
+		display: block;
+		position: absolute;
+		bottom: -25px;
+		color: white;
+		visibility: visible;
+	}
+	
+	&.active:before {
+		content: 'Class: active';
+		display: block;
+	} 
+		
+	&.inactive:before {
+		content: 'Class: inactive';
+		display: block;
+	}
+}
+
+// end base
+
+
+// Use case 1
+.one {
+
+	[data-ex] {
+		visibility: hidden;
+		
+		&.active{
+			visibility: visible;
+		} 
+		
+		&.inactive {
+			visibility: visible;
+		}
+	}
+}
+// end Use case 1
+
+// Use case 2
+.two {
+
+	[data-ex] {
+		visibility: hidden;
+		transition: 0.3s ease;
+		
+		&.active{
+			visibility: visible;
+		} 
+		
+		&.inactive {
+			visibility: visible;
+			background: black;
+			color: white;
+		}
+	}
+}
+// end Use case 2
+
+// Use case 3
+.three {
+
+	[data-ex] {
+		visibility: visible;
+		transition: 0.3s ease;
+		
+		&.active{
+			visibility: visible;
+			background: grey;
+			color: white;
+		} 
+		
+		&.inactive {
+			visibility: visible;
+			background: black;
+			color: white;
+		}
+	}
+}
+// end Use case 3
+
+// Use case 4
+.four {
+
+	[data-ex] {
+		visibility: hidden;
+		transition: 0.3s ease;
+		
+		&.active{
+			visibility: visible;
+		} 
+		
+		&.inactive {
+			visibility: visible;
+			background: black;
+			color: white;
+		}
+	}
+}
+// end Use case 4

@@ -1,10 +1,10 @@
 # ClassToggle.js
 
-A light ~0.5kb and simple class toggle in pure JS with no dependencies.
+A light ~0.9kb and simple class toggle in pure JS with no dependencies.
 
 **ClassToggle.js**
 - Toggle classes with pure JavaScript.
-- Is a light-weight library, just **466 bytes** minified & gzipped.
+- Is a light-weight library, just **901 bytes** minified & gzipped.
 - No dependencies.
 
 ClassToggle.js is written with the aim to be as light and reusable as possible.
@@ -15,28 +15,40 @@ For a robust code base ClassToggle.js is written in Typescript and compiled to J
 
 Download the minified library: [ClassToggle.min.js.](https://raw.githubusercontent.com/mvdschee/ClassToggle.js/master/src/ClassToggle.min.js)
 
+Point to the script location in your project and set the script before your `main.js` file and after all web content.
 ```html
-<script type="text/javascript" src="assets/js/ClassToggle.min.js"></script>
+<body>
+    <!-- Your content -->
+    <script src="assets/js/ClassToggle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
 ```
 
 ### Usage
 
-In HTML, add an identifier to the element that should be a trigger:
+In HTML give the element that you want to function as a **Trigger** a data attribute:
 
 ```html
-<button class="trigger_1">click me!</button>
+<button data-tr="1">click me!</button>
 ```
-The number represent the group that should be toggled.
-
-For the elements that will receive the "active" class, add an identifier like:
+The number represent the group that it should toggle it's status.
+For the **Execute** elements that have the same number, it will set a class `active` or `inactive` on a click action.
 
 ```html
-<div class="execute_1"></div>
+<div data-ex="1"></div>
 ```
 
-Match-up the **[numbers]** from the **trigger** with that of your **execute** class.
+Match-up the **number** from the `data-tr` with that of your `data-ex` and it will toggle those classes. 
 
-All you need to do now is just instantiate ClassToggle as follows:
+You can have multiple numbers in a **Trigger** element and also in a **Execute** element:
+```html
+<button data-tr="1 2 3 4 70"></button>
+
+<div data-ex="1 2 3 4 70"></div>
+```
+Make sure there is a `whitespace` between the numbers!
+
+All you need to do now is just initiate the ClassToggle script with the following snippet in your `main.js` file:
 
 ```js
 var trigger = new Trigger();
