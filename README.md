@@ -1,25 +1,24 @@
-# ClassToggle.js
+# classToggle.js
 
-A light ~0.9kb and simple class toggle in pure JS with no dependencies.
+A lightweight and simple class toggle in JavaScript with no dependencies.
 
-**ClassToggle.js**
-- Toggle classes with pure JavaScript.
-- Is a light-weight library, just **901 bytes** minified & gzipped.
+**classToggle.js**
+- Toggle classes with JavaScript.
+- Is a light-weight library, just **1.71 KiB** minified & gzipped.
 - No dependencies.
 
-ClassToggle.js is written with the aim to be as light and reusable as possible.
-For a robust code base ClassToggle.js is written in Typescript and compiled to JavaScript.
-
+classToggle.js is written to be as light and reusable as possible.
+For a robust code base, classToggle.js is written in Typescript and compiled to ES5 JavaScript.
 
 ### Install
 
-Download the minified library: [ClassToggle.min.js.](https://raw.githubusercontent.com/mvdschee/ClassToggle.js/master/src/ClassToggle.min.js)
+Download the minified library: [classToggle.js.](https://raw.githubusercontent.com/mvdschee/classToggle.js/master/src/classToggle.js)
 
-Point to the script location in your project and set the script before your `main.js` file and after all web content.
+Point to the script location in your project and after all web content.
 ```html
 <body>
     <!-- Your content -->
-    <script src="assets/js/ClassToggle.min.js"></script>
+    <script src="assets/js/classToggle.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
 ```
@@ -48,16 +47,13 @@ You can have multiple numbers in a **Trigger** element and also in a **Execute**
 ```
 Make sure there is a `whitespace` between the numbers!
 
-All you need to do now is just initiate the ClassToggle script with the following snippet in your `main.js` file:
+You're not limited by the use of `numbers` single words work too! So it might be easy to distinguish curtain toggle groups.
 
-```js
-var trigger = new Trigger();
-trigger.findTrigger();
-```
+The script is self-containing so it will execute itself.
 
 ### Example
 [Demo on Codepen.](https://codepen.io/motion_max/pen/ZXyRLW)
 
 
 ### Changelog
-See the [Changelog.](https://github.com/mvdschee/ClassToggle.js/wiki/Changelog)
+See the [Changelog.](https://github.com/mvdschee/classToggle.js/wiki/Changelog)
