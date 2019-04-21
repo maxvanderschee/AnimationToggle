@@ -1,42 +1,35 @@
-/*! ClassToggle.js - v0.1.0 - 2018-dec-27
-* https://github.com/mvdschee/ClassToggle.js
-* Copyright (c) 2018 Max van der Schee; Licensed MIT */
+class ClassToggle {
+	triggers: NodeListOf<HTMLElement>;
+	executable: NodeListOf<HTMLElement>;
 
-class Trigger {
-  list: NodeListOf<HTMLElement>;
+	constructor () {
+		this.triggers = document.querySelectorAll('[data-tr]');
+		this.executable = document.querySelectorAll('[data-ex]');
+	}
 
-  findTrigger(){
-    let toggle = new Toggle();
-    this.list = document.querySelectorAll("[data-tr]");
+  	public queryTriggers() {
+		Array.prototype.forEach.call(this.triggers, (trigger: HTMLElement) => {
+			let executeGroup: string[] = trigger.dataset.tr.split(' ');		
+			trigger.addEventListener('click', () => { this.toggleClass(executeGroup) }, false);
+		});
+  	}
 
-    this.list.forEach(el => {
-      let numbers: string[] = el.dataset.tr.split(" ");
-      el.addEventListener('click', () => { toggle.toggleExecute(numbers) }, false);
-    });
-  }
+	private toggleClass(executeGroup: string[]) {
+		executeGroup.forEach((group) => {
+			Array.prototype.forEach.call(this.executable, (execute: HTMLElement) => {
+				if (execute.dataset.ex.indexOf(group) >= 0) {
+					if (execute.classList.contains('active')) {
+						execute.classList.remove('active');
+						execute.classList.add('inactive');
+					} else {
+						execute.classList.add('active');
+						execute.classList.remove('inactive');
+					}	
+				}
+			})
+		});		
+  	}
 }
 
-class Toggle {
-  list: NodeListOf<HTMLElement>;
-
-  toggleExecute(numbers: string[]) {
-    this.list = document.querySelectorAll("[data-ex]");
-
-    numbers.forEach(number => {
-      this.list.forEach(item => {
-        let itemNumbers: string[] = item.dataset.ex.split(" ");
-        itemNumbers.forEach(itemNumber => {
-          if (itemNumber === number) {
-            if (item.classList.contains("active")) {
-              item.classList.remove("active");
-              item.classList.add("inactive");
-            } else {
-              item.classList.add("active");
-              item.classList.remove("inactive");
-            }
-          }
-        });
-      });
-    });
-  }
-}
+const toggle = new ClassToggle();
+toggle.queryTriggers();
